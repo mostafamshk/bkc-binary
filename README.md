@@ -151,7 +151,7 @@ persistent_peers = "432d816d0a1648c5bc3f060bd28dea6ff13cb413@216.58.206.174:2665
 5735836cbaa747e013e47b11839db2c2990b918a@121.37.49.12:26656"
 ```
 
-## 3. Start the node
+## 4. Start the node
 simply run :
 ```
 myProjectd start
