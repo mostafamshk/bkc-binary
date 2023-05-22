@@ -130,3 +130,29 @@ this will also update genesis.json . finally update your node and all other node
 ### validator node at network running time
 This case can be handled like the validator node at genesis time. at least official doc says that!
 
+
+## 3. Node connection configuration to other nodes
+for this part, you have to edit the /config/config.toml 
+first update the external_address field with your node ip like this :
+```
+    external_address = "172.217.22.14:26656" # replace by your own
+```
+second, find out your node id by running this :
+```
+    myProjectd tendermint show-node-id
+```
+third, set the seeds field to especify the seed node in your network(with format of : nodeID@nodeIp:port) :
+```
+    seeds = "432d816d0a1648c5bc3f060bd28dea6ff13cb413@216.58.206.174:26656"
+```
+fourth, set the persistent_peers field. this field should contain the nodes identifiers that this node wants to connect with. 
+```
+persistent_peers = "432d816d0a1648c5bc3f060bd28dea6ff13cb413@216.58.206.174:26656,
+5735836cbaa747e013e47b11839db2c2990b918a@121.37.49.12:26656"
+```
+
+## 3. Start the node
+simply run :
+```
+myProjectd start
+```
